@@ -1,11 +1,19 @@
 import React from 'react'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
-import { Main } from '../layouts/default'
+import { Centre } from '../layouts'
+import { Button } from '@material-ui/core'
 
-export const Home:React.FC = () => {
+export const Home:React.FC<RouteComponentProps> = ({history}) => {
   return (
-    <Main>
-      <h3>Start developing directly within the page, or creating custom components in the components directory.</h3>
-    </Main>
+    <Centre>
+      <Button 
+        variant="contained" 
+        color="primary"
+        onClick={_ => history.push('/tournament')}
+      >
+        New Tournament
+      </Button>
+    </Centre>
   )
 }
