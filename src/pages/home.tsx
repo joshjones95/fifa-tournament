@@ -4,7 +4,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { Centre } from '../layouts'
 import { Button } from '@material-ui/core'
 
-export const Home:React.FC<RouteComponentProps> = ({history}) => {
+const component:React.FC<RouteComponentProps> = ({history}) => {
   return (
     <Centre>
       <Button 
@@ -12,8 +12,10 @@ export const Home:React.FC<RouteComponentProps> = ({history}) => {
         color="primary"
         onClick={_ => history.push('/tournament')}
       >
-        New Tournament
+        Saturdays are for the boys
       </Button>
     </Centre>
   )
 }
+
+export const Home = withRouter(component)

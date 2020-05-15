@@ -1,18 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-import { ApolloProvider } from '@apollo/react-hooks';
-import { apolloClient } from './plugins/apolloPlugin'
+import {store} from './store'
+
+import './index.scss'
 
 import { Home } from './pages/home'
+import { Tournament } from './pages/tournament'
 
 ReactDOM.render(
-  <ApolloProvider client={apolloClient}>
+  <Provider store={store}>
     <Router> 
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/tournament" component={Tournament} />
     </Router>
-  </ApolloProvider>
+  </Provider>
   , 
   document.getElementById('root')
 );
