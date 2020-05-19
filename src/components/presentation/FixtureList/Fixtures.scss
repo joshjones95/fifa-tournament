@@ -1,0 +1,17 @@
+.fixture-list {
+  margin: 10px;
+}
+
+.fixture-list__row {
+  height: 170px;
+  width: 100%;
+}
+
+.fixture-card {
+  padding: 2px 8px;
+  width: 30%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
