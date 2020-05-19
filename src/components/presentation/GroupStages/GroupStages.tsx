@@ -11,8 +11,6 @@ export interface GroupStagesProps {
 
 export const GroupStages: React.FC<GroupStagesProps> = ({players}) => {
 
-  console.log(players)
-
   return (
     <div>
       <h2>Group Stages</h2>

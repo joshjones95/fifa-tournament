@@ -25,8 +25,10 @@ export const GroupTable:React.FC<GroupTableInterface> = ({players, groupId}) => 
 
   const classes = useStyles();
 
-  const rows = players.filter((item: any) => {return item.group===groupId})
+  const groups = players.filter((item: any) => {return item.group===groupId}).sort((a: any,b: any) => (b.gf-b.ga) - (a.gf-a.ga))
   
+  const rows = groups.sort((a: any,b: any) => b.points - a.points)
+
   return (
     <TableContainer>
     <Table className={classes.table} size="small" aria-label="simple table">
@@ -34,6 +36,11 @@ export const GroupTable:React.FC<GroupTableInterface> = ({players, groupId}) => 
         <TableRow>
           <TableCell>Player</TableCell>
           <TableCell>Games</TableCell>
+          <TableCell>W</TableCell>
+          <TableCell>D</TableCell>
+          <TableCell>L</TableCell>
+          <TableCell>GF</TableCell>
+          <TableCell>GA</TableCell>
           <TableCell>Points</TableCell>
         </TableRow>
       </TableHead>
@@ -45,6 +52,21 @@ export const GroupTable:React.FC<GroupTableInterface> = ({players, groupId}) => 
             </TableCell>
             <TableCell component="th" scope="row">
               {row.games}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.wins}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.draws}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.losses}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.gf}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.ga}
             </TableCell>
             <TableCell component="th" scope="row">
               {row.points}
