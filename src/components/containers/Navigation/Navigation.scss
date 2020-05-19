@@ -1,0 +1,27 @@
+.kush-nav {
+  height: 40px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.kush-nav__item {
+  margin: 8px 12px 8px 0px;
+}
+
+.kush-nav__item a {
+  color: #666666;
+  text-decoration: none;
+  float: left;
+}
+
+.kush-nav__item a:hover {
+  color: #096A09;
+}
+
+.kush-nav__item--active a {
+  color: #096A09;
+}
